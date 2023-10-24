@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>    
+    <link rel="stylesheet" href="jquery.bxslider.css">
+    <link rel="stylesheet" href="colorbox.css">
+    <link rel="stylesheet" type="text/css" href="fullpage.css" />
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <script type="text/javascript" src="jquery.colorbox.js"></script>
+    <script type="text/javascript" src="fullpage.js"></script>
+    <script src="jquery.bxslider.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#fullpage').fullpage({
+                //options here
+                autoScrolling:true,
+                scrollHorizontally: true,
+                anchors: ['1Page', '2Page', '3Page','4Page','5Page'],
+                menu: '#myMenu',
+                navigation: true,
+                navigationPosition: 'right'
+            });   
+            
+            $('.close3').click(function(){
+                $('.title').hide();
+            });
+
+            
+            $('.group1').colorbox({width:'95%' ,height:'95%',rel:'group1'});
+            $('.group2').colorbox({rel:'group2',iframe:true,innerWidth:1280, innerHeight:720});
+
+            $('.bxslider').bxSlider({
+                mode: 'horizontal',
+                auto:true
+            });
+
+
+
+        });
+    </script>
+</head>
+<body>
+
+    <div id="fullpage">
+        <div class="section"></div>
+        <div class="section"></div>
+        <div class="section"> </div>
+        <div class="section">
+             <video src="movie1.mp4" muted controls></video>
+        </div>
+ 
+
+
+    </div>
+
+</body>
+</html>
+
